@@ -1,0 +1,325 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.0;
+    font-weight: normal;
+}
+
+
+:root {
+
+    /* colore pallette */
+
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --translucent-pink: rgb(250, 236, 243);
+
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    /* typography */
+
+    font-size: 15px;
+    font-family: 'League Spartan';
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    background-image: url('./images/bg-pattern-bottom-mobile.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+}
+
+.review,
+.guru,
+.best-tech,
+.testimonial {
+    min-width: 336px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.intro h1 {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    margin: 2.5rem auto 1.5rem;
+    width: 15ch;
+}
+
+.intro p {
+    color: gray;
+    max-width: 45ch;
+    margin: 0 auto;
+}
+
+.ratings {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.ratings div {
+    border-radius: 10px;
+    color: var(--very-dark-magenta);
+    text-align: center;
+    z-index: 0;
+}
+
+.review, .guru, .best-tech {
+    background: var(--translucent-pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .75rem;
+}
+
+.stars {
+    display: flex;
+    justify-content: space-between;
+    background-color: none;
+    align-items: center;
+    width: 35%; 
+    max-width: 150px;   
+}
+
+.star-container {
+    background-image: url('./images/icon-star.svg');
+    background-color: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    z-index: 3;
+    padding: .65rem
+}
+
+.rated-5 {
+    padding: .5rem;
+}
+
+.rated-5 p {
+    font-weight: 700;
+}
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.testimonial {
+    background: var(--very-dark-magenta);
+    color: var(--white);
+    border-radius: 7.5px;
+    padding: 2rem;
+    padding-top: 0rem;
+}
+
+.heading {
+    margin: .25rem auto 1rem;
+    width: 50%;
+    font-size: .8rem;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.one .heading:before {
+    display: inline-block;
+    content: '';
+    background-image: url('./images/image-colton.jpg');
+    height: 3.25rem;
+    width: 3.25rem;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    position: relative;
+    top: 3.25rem;
+    right: 5rem;
+  
+}
+
+.two .heading:before {
+    display: inline-block;
+    content: '';
+    background-image: url('./images/image-irene.jpg');
+    height: 3.25rem;
+    width: 3.25rem;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    position: relative;
+    top: 3.25rem;
+    right: 5rem;}
+
+.three .heading:before {
+    display: inline-block;
+    content: '';
+    background-image: url('./images/image-anne.jpg');
+    height: 3.25rem;
+    width: 3.25rem;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    position: relative;
+    top: 3.25rem;
+    right: 5rem;
+}
+
+.buyer {
+    color: var(--soft-pink);
+    font-weight: 500;
+}
+
+blockquote {
+    line-height: 1.35rem;
+    width: 27.5ch;
+}
+
+@media screen and (min-width: 400px) {
+    main {
+        background-image: url('./images/bg-pattern-bottom-desktop.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .intro,
+    .ratings, 
+    .testimonials {
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+    main {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 4fr 6fr;
+        grid-template-rows: 5.5fr 4.5fr;
+        box-sizing: border-box;
+        background-image: url('./images/bg-pattern-bottom-desktop.svg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 0;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .intro {
+        text-align: left;
+        padding-top: 2.5%;
+        padding-left: 15%;
+        margin-top: 5em;
+    }
+
+    .intro h1 {
+        font-size: clamp(6vh, 7vh, 8vh);
+        margin-left: 0;
+    }
+
+    .intro p {
+        width: 40ch;
+        line-height: 2;
+        margin-left: 0;
+    }
+
+    .ratings {
+        margin: 10em 0 0;
+        margin-right: 6em;
+        padding: 0;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .review {
+        width: 500px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 3fr 7fr;
+        margin-left: 9em;
+
+    }
+
+    .guru {
+        width: 500px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2.5fr 7fr;
+        margin-left: 12em;
+
+    }
+
+    .best-tech {
+        width: 500px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 3fr 7fr;
+        margin-left: 15em;
+
+    }
+
+    .testimonials {
+        box-sizing: border-box;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        margin: 0;
+        padding: 0 6em;
+    }
+
+    .testimonial {
+        width: 95%;
+        height: 50%;
+        padding-top: 0;
+        max-width: 400px;
+    }
+
+    .heading {
+        margin-top: -1em;
+        height: 30%;
+        padding: 0 0 1em 1em;
+    }
+
+    .name {
+        margin-bottom: .5em;
+    }
+
+    blockquote {
+        width: 30ch;
+        margin-top: 4em;
+    }
+
+    .one {
+        grid-column: 1 / 2;
+        min-height: 231px;
+        min-width: 302px;
+    }
+
+    .two {
+        grid-column: 2 / 3;
+        margin-top: 2em;
+        min-height: 231px;
+        min-width: 302px;
+
+    }
+
+    .three {
+        grid-column: 3 / 4;
+        margin-top: 4em;
+        min-height: 231px;
+        min-width: 302px;
+
+
+    }
+}
